@@ -1,3 +1,11 @@
+.zoominner { padding: 5px 10px 10px; background: #FFF; text-align: left; }
+.zoominner p { padding: 8px 0; }
+.zoominner p a { float: left; margin-left: 10px; width: 17px; height: 17px; background: url(/static/image/common/imgzoom_tb.gif) no-repeat 0 0; line-height: 100px; overflow: hidden; }
+.zoominner p a:hover { background-position: 0 -39px; }
+.zoominner p a.imgadjust { background-position: -40px 0; }
+.zoominner p a.imgadjust:hover { background-position: -40px -39px; }
+.zoominner p a.imgclose { background-position: -80px 0; }
+.zoominner p a.imgclose:hover { background-position: -80px -39px; }
 #ct {
 	margin: auto;
 	max-width: 960px;
