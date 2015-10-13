@@ -1,0 +1,56 @@
+<!--{template common/header}-->
+<link rel="stylesheet" type="text/css" href="source/plugin/pic_vote/template/pic_vote.css" />
+<script src="source/plugin/pic_vote/template/pic_vote.js"></script>
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="plugin.php?id=pic_vote:vote">军训摄影大赛投票</a> <em>&rsaquo;</em>
+	</div>
+</div>
+<div id="ct">
+	<form action="plugin.php?id=pic_vote:do_vote" method="post" onsubmit="return rule({$limit})">
+		<!--{loop $result $row}-->
+		<div class="ct_pic" id="ct_pic_{$row['pic_id']}">
+			<div class="ct_pic_wrapper">
+				<img src="{$row['pic_url']}" width="100%">
+			</div>
+			<div class="ct_pic_controls">
+				<p>
+					<a href="javascript:;" onclick="showWindow('show_pic', 'plugin.php?id=pic_vote:show_pic&url={$row['encoded_url']}')">查看大图</a>
+					<input type="checkbox" name="vote[]" value="{$row['pic_id']}" onclick="toggleChecked(this)">
+				</p>
+				<p>作者：{$row['pic_author']}</p>
+				<p>描述：{$row['pic_describe']}</p>
+			</div>
+		</div>
+		<!--{/loop}-->		
+		<hr>
+		<div class="ct_pic_group">
+			<button type="submit" class="pn pnc vm"><strong>保存并提交</strong></button>
+		</div>
+	</form>
+</div>
+<script>
+var votes="{$votes}";
+if (votes!=""){
+	var arr=votes.split("|");
+	for(var i in arr){
+		document.getElementById("ct_pic_"+arr[i]).className+=" selected";
+		document.querySelector("#ct_pic_"+arr[i]+" input").setAttribute("checked","checked");
+	}
+}
+function toggleChecked(i){
+	var parent=i.parentNode.parentNode.parentNode;
+	console.log(parent);
+	if(i.getAttribute("checked")){
+		i.removeAttribute("checked");
+		parent.className=parent.className.replace(" selected","");
+	}
+	else{
+		i.setAttribute("checked","checked");
+		parent.className+=" selected";
+	}
+}
+</script>
+<!--{template common/footer}-->
