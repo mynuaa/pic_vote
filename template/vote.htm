@@ -9,7 +9,13 @@
 	</div>
 </div>
 <div id="ct">
+	<!--{if $_G[uid]}-->
 	<form action="plugin.php?id=pic_vote:do_vote" method="post" onsubmit="return rule({$limit})">
+	<!--{else}-->
+	<div class="ct_pic_group">
+		<h2>你还没有登录，请登录后投票。</h2>
+	</div>
+	<!--{/if}-->
 		<!--{loop $result $row}-->
 		<div class="ct_pic" id="ct_pic_{$row['pic_id']}">
 			<div class="ct_pic_wrapper">
@@ -27,9 +33,15 @@
 		<!--{/loop}-->		
 		<hr>
 		<div class="ct_pic_group">
+			<!--{if $_G[uid]}-->
 			<button type="submit" class="pn pnc vm"><strong>保存并提交</strong></button>
+			<!--{else}-->
+			<a href="/sso/?page=login&redirect_uri=L3BsdWdpbi5waHA/aWQ9c3lubG9naW46bG9naW5jaGVjayZyZWRpcmVjdF91cmk9TDNCc2RXZHBiaTV3YUhBL2FXUTljR2xqWDNadmRHVTZkbTkwWlE9PQ=="><button disabled class="pn pnc vm"><strong>请先登录</strong></button></a>
+			<!--{/if}-->
 		</div>
+	<!--{if $_G[uid]}-->
 	</form>
+	<!--{/if}-->
 </div>
 <script>
 var votes="{$votes}";

@@ -1,4 +1,5 @@
-<?php  
+<?php
+	if (!$_G['uid']) die();
 	$votes = $_POST['vote'];
 	$vote_items = implode('|', $votes);
 	if (count($vote_items) == 0) {
