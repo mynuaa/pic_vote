@@ -6,6 +6,16 @@
 	width: 100%;
 	overflow: auto;
 }
+#ct .note{
+	margin: 0.5em;
+}
+.rs-tabs-warning{
+	border: 1px solid orange;
+	background: yellow;
+	color: orange;
+	text-align: center;
+	padding: 0.4em;
+}
 .ct_pic{
 	width: 300px;
 	margin: 10px;
