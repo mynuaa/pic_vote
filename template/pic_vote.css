@@ -4,7 +4,7 @@
 }
 #ct form{
 	width: 100%;
-	overflow: auto;
+	overflow: visible;
 }
 #ct .note{
 	margin: 0.5em;
@@ -23,15 +23,18 @@
 	border: 10px solid #FFF;
 	display: inline-block;
 	background-color: white;
-	box-shadow: 0 0 10px 1px #BBB;
+	box-shadow: 0 0 10px 1px rgba(0,0,0,0.1);
 	position: relative;
 	overflow: hidden;
 	box-sizing: border-box;
-	-webkit-transition: border-color 500ms ease-out;
-	-moz-transition: border-color 500ms ease-out;
-	-ms-transition: border-color 500ms ease-out;
-	-o-transition: border-color 500ms ease-out;
-	transition: border-color 500ms ease-out;
+	-webkit-transition: border-color,box-shadow 500ms ease-out;
+	-moz-transition: border-color,box-shadow 500ms ease-out;
+	-ms-transition: border-color,box-shadow 500ms ease-out;
+	-o-transition: border-color,box-shadow 500ms ease-out;
+	transition: border-color,box-shadow 500ms ease-out;
+}
+.ct_pic:hover{
+	box-shadow: 0 0 10px 1px rgba(0,0,0,0.8);
 }
 .ct_pic.selected{
 	border-color: #007EFF;
