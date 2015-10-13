@@ -23,7 +23,7 @@
 			</div>
 			<div class="ct_pic_controls">
 				<p>
-					<a href="javascript:;" onclick="showWindow('show_pic', 'plugin.php?id=pic_vote:show_pic&url={$row['encoded_url']}')">查看大图</a>
+					<a href="javascript:;" onclick="zoom(this,'{$row['pic_url']}',0,0,'0')">查看大图</a>
 					<!--{if $_G[uid]}-->
 					<input type="checkbox" name="vote[]" value="{$row['pic_id']}" onchange="toggleChecked(this)">
 					<!--{/if}-->
