@@ -6,7 +6,8 @@
 		$result[$i]['pic_url'] = preg_replace('/\/0$/', '.jpg', $result[$i]['pic_url']);
 		$result[$i]['thumb'] = preg_replace('/\/photo\//', '/photo/thumb_', $result[$i]['pic_url']);
 		$result[$i]['encoded_url'] = urlencode($result[$i]['pic_url']);
-		$result[$i]['pic_describe'] = preg_replace('/^$/', '无', $result[$i]['pic_describe']);
+		$result[$i]['pic_describe'] = preg_replace('/^$/', '作者很懒，没有写描述……', $result[$i]['pic_describe']);
+		$result[$i]['pic_describe'] = preg_replace('/\n/', '<br>', $result[$i]['pic_describe']);
 	}
 	$vote_var = $_G['cache']['plugin']['pic_vote'];
 	$limit = $vote_var['limit']; 
