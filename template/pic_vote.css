@@ -129,6 +129,6 @@ hr{
 }
 .pic_wrapper{
 	overflow:auto;
-	max-width:800px;
-	max-height:500px;
+	width:800px;
+	height:500px;
 }
