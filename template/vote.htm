@@ -23,7 +23,9 @@
 			<div class="ct_pic_controls">
 				<p>
 					<a href="javascript:;" onclick="showWindow('show_pic', 'plugin.php?id=pic_vote:show_pic&url={$row['encoded_url']}')">查看大图</a>
+					<!--{if $_G[uid]}-->
 					<input type="checkbox" name="vote[]" value="{$row['pic_id']}" onclick="toggleChecked(this)">
+					<!--{/if}-->
 				</p>
 				<p>作者：{$row['pic_author']}</p>
 				<p>描述：{$row['pic_describe']}</p>
