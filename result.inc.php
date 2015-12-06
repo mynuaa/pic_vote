@@ -20,7 +20,7 @@ foreach ($count as $key => $value) {
 	$pic = DB::fetch_first("SELECT `pic_describe`, `pic_url` FROM `wechat_pic_url` WHERE `pic_id` = {$key}");
 	$url = preg_replace('/http:\/\/mmbiz\.qpic\.cn\/mmbiz\//', '/source/plugin/pic_vote/photo/', $pic['pic_url']);
 	$url = preg_replace('/\/0/', '.jpg', $url);
-	$thumb = preg_replace('/\/photo\//', '/source/plugin/pic_vote/photo/thumb_', $url);
+	$thumb = preg_replace('/\/photo\//', '/photo/thumb_', $url);
 	if ($pic['pic_describe'] == '') $pic['pic_describe'] = '暂无描述……';
 	$countStr .= "<div>{$pic['pic_describe']}</div>";
 	$countStr .= "<img src='{$thumb}' style='max-width:100px;width:50%'><hr>";
