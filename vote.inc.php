@@ -2,7 +2,7 @@
 	$sql = "SELECT * FROM " . DB::table('wechat_pic_url') . " WHERE `pic_deleted` = 0 ORDER BY RAND()";
 	$result = DB::fetch_all($sql);
 	for ($i = 0; $i < count($result); $i++) {
-		$result[$i]['pic_url'] = str_replace('http://mmbiz.qpic.cn/mmbiz/', 'http://my.nuaa.edu.cn/photo/', $result[$i]['pic_url']);
+		$result[$i]['pic_url'] = str_replace('http://mmbiz.qpic.cn/mmbiz/', 'http://my.nuaa.edu.cn/source/plugin/pic_vote/photo/', $result[$i]['pic_url']);
 		$result[$i]['pic_url'] = preg_replace('/\/0$/', '.jpg', $result[$i]['pic_url']);
 		$result[$i]['thumb'] = preg_replace('/\/photo\//', '/photo/thumb_', $result[$i]['pic_url']);
 		$result[$i]['encoded_url'] = urlencode($result[$i]['pic_url']);
